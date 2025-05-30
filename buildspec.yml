@@ -13,7 +13,7 @@ phases:
   post_build:
     commands:
       - echo Uploading to S3...
-      - aws s3 sync ./build/ s3://frontend-exam-tuxona/ --delete
+      - aws s3 sync ./dist/ s3://frontend-exam-tuxona/ --delete
       - echo Invalidating CloudFront cache...
       - aws cloudfront create-invalidation --distribution-id YOUR_DISTRIBUTION_ID --paths "/*"
 artifacts:
