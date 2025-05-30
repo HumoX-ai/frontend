@@ -87,7 +87,7 @@ export const authApi = createApi({
         method: "PATCH",
         body: patch,
       }),
-      invalidatesTags: (result, error, { userId }) => [
+      invalidatesTags: (_result, _error, { userId }) => [
         { type: "User", id: userId },
       ],
     }),
@@ -96,7 +96,7 @@ export const authApi = createApi({
         url: `users/${id}`,
         method: "DELETE",
       }),
-      invalidatesTags: (result, error, id) => [{ type: "User", id }],
+      invalidatesTags: (_result, _error, id) => [{ type: "User", id }],
     }),
   }),
 });
